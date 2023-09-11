@@ -1,0 +1,11 @@
+The Last of Us Part II
+ 2020
+Sony Interactive Entertainment for
+release_date : June 19, 2020
+
+platform: " playstation 4 , playstation 5 , PC , XBOX X ,XBOX S",
+
+description:The Last of Us Part II is an action-adventure game played from a third-person perspective featuring elements of the survival horror genre. The player traverses post-apocalyptic environments such as buildings and forests to advance the story.
+action-adventure game
+
+price : $39.99

@@ -1,0 +1,7 @@
+Gran Turismo 7
+ 7.0
+Polyphony Digital 
+March 4, 2022
+platform: " playstation 4 , playstation 5 , PC , XBOX X ,XBOX S",
+ racing simulation game
+$59.99
