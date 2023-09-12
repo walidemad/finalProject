@@ -1,8 +1,0 @@
-Ghost of Tsushima Director's Cut
- 2021
-DIRECTOR'S CUT
-July 17, 2020
-platform: " playstation 4 , playstation 5 , PC , XBOX X ,XBOX S",
-description: This is an action game in which players assume the role of a samurai (Jin Sakai) on a quest for vengeance against Mongol invaders in 13th century Japan.
- category: "action game"
-$69.99

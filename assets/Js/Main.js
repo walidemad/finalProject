@@ -1,4 +1,22 @@
+/////////////////////////////////////////////////////////////////////////
+//define public variables
+/////////////////////////////////////////////////////////////////////////
+//const : application name
 export const APPLICATIONNAME = "finalProject";
+//array : all games in project
+export let GamesArray = [];
+//array : all main images
+export let MainImages = [];
+//array : all names of games
+export let GamesNames = [];
+//array : elements of path
+let path = Array.from(window.location.pathname.split("/"));
+//string : page name (name+extension)
+export let page_name = path[path.length - 1];
+/////////////////////////////////////////////////////////////////////////
+//define classes
+/////////////////////////////////////////////////////////////////////////
+//Game
 export class Game {
     id = 0;
     name = "";
@@ -22,12 +40,15 @@ export class Game {
     main_image = "";
     images_from_game = [];
     price = 0;
+    is_popular = false;
+    is_new = false;
     setId = function () {
         let x = Math.floor(Math.random() * 1000000);
         GamesArray.forEach(function (v, i) {
             // while (x == v.id) {
             if ((x == v.id)) return;
             x = Math.floor(Math.random() * 1000000);
+
             // }
 
         });
@@ -37,10 +58,54 @@ export class Game {
 
 }
 
-export let GamesArray = [];
-export let MainImages = [];
-export let GamesNames = [];
-function addGameToGamesArray(name, version, company, release_date, platform, description, category, game_play, requirements, main_image, images_from_game, price) {
+/////////////////////////////////////////////////////////////////////////
+//get element from html pages
+/////////////////////////////////////////////////////////////////////////
+
+//popular.html
+export let elm_popular = document.querySelector(".popular");
+
+//new.html
+export let elm_new = document.querySelector(".new");
+
+//shared
+export let elm_toggle_pages = document.querySelector(".toggle-popular-new");
+export let elm_toggle_pages_title_page_name = document.querySelector(".toggle-popular-new > .title span.name");
+export let elm_toggle_pages_button = document.querySelector(".toggle-popular-new > a.button");
+/////////////////////////////////////////////////////////////////////////
+//functions
+/////////////////////////////////////////////////////////////////////////
+
+//change text of div:center and text of its button
+function changeContentsOfCenter() {
+    if (page_name.toLowerCase() == "popular.html") {
+        elm_toggle_pages_title_page_name.textContent = "New";
+        elm_toggle_pages_button.textContent = "New";
+        elm_toggle_pages_button.href = "./New.html";
+    } else
+        if (page_name.toLowerCase() == "new.html") {
+            elm_toggle_pages_title_page_name.textContent = "Popular";
+            elm_toggle_pages_button.textContent = "MOST POPULARS";
+            elm_toggle_pages_button.href = "./Popular.html";
+        }
+}
+
+//create new Game object and adding it to GameArray 
+function addGameToGamesArray(
+    name,
+    version,
+    company,
+    release_date,
+    platform,
+    description,
+    category,
+    game_play,
+    requirements,
+    main_image,
+    images_from_game,
+    price,
+    is_popular = false,
+    is_new = false) {
     let game = new Game();
     // game.id = game.setId();
     let x = Math.floor(Math.random() * 1000000);
@@ -64,9 +129,39 @@ function addGameToGamesArray(name, version, company, release_date, platform, des
     game.main_image = main_image;
     game.images_from_game = images_from_game;
     game.price = price;
+    game.is_popular = is_popular;
+    game.is_new = is_new;
 
     GamesArray.push(game);
 }
+/////////////////////////////////////////////////////////////////////////
+//calling functions
+/////////////////////////////////////////////////////////////////////////
+changeContentsOfCenter();
+
+
+
+
+
+
+
+
+
+
+
+// if (page_name.toLowerCase() == "popular.html") {
+// elm_toggle_popular_new_name.textContent = "New";
+// elm_toggle_popular_new_button.textContent = "New";
+// elm_toggle_popular_new_button.href = "./New.html";
+
+// }
+
+
+
+/////////////////////////////////////////////////////////////////////////
+//adding games to GameArray by calling function: addGameToGamesArray
+/////////////////////////////////////////////////////////////////////////
+//popular
 addGameToGamesArray(
     "GOD OF WAR",
     "Ragnarök",
@@ -91,8 +186,11 @@ addGameToGamesArray(
         "GOD OF WAR (3)",
     ]
     ,
-    "69.99$"
+    "69.99$",
+    true,
+    false
 );
+//popular
 addGameToGamesArray(
     "FIFA 23",
     "23",
@@ -116,8 +214,10 @@ addGameToGamesArray(
         "GOD OF WAR (1)",
         "GOD OF WAR (3)",
     ],
-    "59.99$"
+    "59.99$",
+    true, false
 );
+//popular
 addGameToGamesArray(
     "spider man miles morales",
     "",
@@ -130,8 +230,11 @@ addGameToGamesArray(
     "",
     "Main.jpg",
     "",
-    "33.90"
-)
+    "33.90",
+    true,
+    false
+);
+//popular
 addGameToGamesArray(
     "Gran Turismo 7",
     " 7.0",
@@ -144,8 +247,11 @@ addGameToGamesArray(
     "racing simulation",
     "Main.jpg",
     "",
-    "59.99"
+    "59.99",
+    true,
+    false
 );
+//popular
 addGameToGamesArray(
     "Ratchet & Clank Rift Apart",
     " 2023",
@@ -158,8 +264,11 @@ addGameToGamesArray(
     "racing simulation",
     "Main.jpg",
     "",
-    "59.99"
+    "59.99",
+    true,
+    false
 );
+//popular
 addGameToGamesArray(
     "uncharted 4",
     " 2022",
@@ -172,8 +281,11 @@ addGameToGamesArray(
     "",
     "Main.jpg",
     "",
-    "59.99"
+    "59.99",
+    true,
+    false
 );
+//popular
 addGameToGamesArray(
     "The Last of Us ",
     "2020",
@@ -186,10 +298,13 @@ addGameToGamesArray(
     "",
     "Main.jpg",
     "",
-    "39.99"
+    "39.99",
+    true,
+    false
 );
+//popular
 addGameToGamesArray(
-    "Ghost of Tsushima Director's Cut",
+    "Ghost of Tsushima Directors Cut",
     "2021",
     "DIRECTOR'S CUT",
     "July 17, 2020",
@@ -200,10 +315,13 @@ addGameToGamesArray(
     "",
     "Main.jpg",
     "",
-    "69.99"
+    "69.99",
+    true,
+    false
 );
+//new
 addGameToGamesArray(
-    "Assassin's Creed® Mirage",
+    "Assassins Creed Mirage",
     "2023",
     "Ubisoft Bordeaux",
     "October 5, 2023",
@@ -214,7 +332,43 @@ addGameToGamesArray(
     "",
     "Main.jpg",
     "",
-    "49.99"
+    "49.99",
+    false,
+    true
+);
+//new
+addGameToGamesArray(
+    "Returnal",
+    "2023",
+    "Housemarque",
+    "",
+    "playstation 4 , playstation 5 , PC , XBOX X ,XBOX S",
+    "In Returnal, the players take on the role of Selene, a Deep-Space-Astro-Scout, who crashes with her spaceship on a planet called Atropos. On Atropos, Selene must face the horrors of a time loop that re-awakes her in the same place every time she dies.",
+    "third-person shooter",
+    "",
+    "",
+    "Main.jpg",
+    "",
+    "36.39",
+    false,
+    true
+);
+//new
+addGameToGamesArray(
+    "Armored Core VI Fires of Rubicon",
+    "2023",
+    "FromSoftware",
+    "August 25, 2023",
+    "playstation 4 , playstation 5 , PC , XBOX X ,XBOX S",
+    "The gameplay in Armored Core VI emphasizes mecha-based vehicular combat. Players in this game take on the role of expert pilots in control of strong mechs known as Armored Cores. The huge flexibility for modification of these mechs with the use of various parts allows players to enhance and sharpen their capabilities.",
+    "Vehicular combat",
+    "",
+    "",
+    "Main.jpg",
+    "",
+    "59.99",
+    false,
+    true
 );
 
 
@@ -228,7 +382,7 @@ MainImages.push()
 let elm_home = document.querySelector(".box-home > .home") || "";
 if (elm_home) {
     elm_home.addEventListener("click", function () {
-        window.location = window.location.origin + `/${APPLICATIONNAME}/index.html`;
+        window.location = window.location.origin + `/ ${APPLICATIONNAME} /index.html`;
     });
 }
 
@@ -257,3 +411,7 @@ if (elm_control) {
 }
 console.log(GamesArray);
 // GamesArray.push("abbas");
+
+
+
+

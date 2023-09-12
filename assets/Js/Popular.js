@@ -1,16 +1,20 @@
-import { GamesArray, APPLICATIONNAME, MainImages, GamesNames } from "./Main.js";
-let elm_popular = document.querySelector(".popular");
-GamesArray.forEach(function (v) {
-    let image = document.createElement("img");
-    // image.src = `/${APPLICATIONNAME}/Assets/Images/Games/${v.name.split(" ").join("").toUpperCase()}/${v.main_image}`;
-    image.src = `./../Assets/Images/Games/${v.name.split(" ").join("").toUpperCase()}/${v.main_image}`;
-    image.className = "popular-image";
-    elm_popular.appendChild(image);
-})
+import { GamesArray, APPLICATIONNAME, MainImages, GamesNames, elm_popular } from "./Main.js";
+function fillPopularSection() {
+    GamesArray.forEach(function (v) {
+        if (v.is_popular == true) {
+            let image = document.createElement("img");
+            image.src = `./../Assets/Images/Games/${v.name.split(" ").join("").toUpperCase()}/${v.main_image}`;
+            image.className = "popular-image";
+            if (elm_popular) {
+                elm_popular.appendChild(image);
+            }
+        }
+    });
 
+}
+console.log("hellow")
 
-
-
+fillPopularSection();
 
 
 
