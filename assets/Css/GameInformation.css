@@ -1,0 +1,27 @@
+.information{
+    flex-basis: 50%;
+   min-width: 300px;
+}
+.information h2{
+font-size: 50px;
+line-height: 60px;
+margin: 25px 0;
+
+}
+
+.imag{
+    width: 700px;
+    height: 350px;
+    padding: 20px;
+    /* border: 4px solid black; */
+}
+.imginfo{
+    justify-content: center;
+}
+.small-img{
+    width: 245px;
+    height: 200px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
