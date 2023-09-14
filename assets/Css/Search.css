@@ -1,0 +1,73 @@
+body {
+    background-image: none;
+    padding: 0;
+    margin: 0;
+}
+
+.over {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: -1;
+}
+
+.header {
+    margin: 0px;
+}
+
+.home {
+    background-color: var(--color-button-link);
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+}
+
+.content {}
+
+.search-box-items {
+    height: max-content;
+    /* overflow-y: scroll; */
+
+}
+
+.search-box-item {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 220px;
+    /* overflow-y: scroll; */
+}
+
+.search-box-item>img {
+    width: 300px;
+    border-radius: 20px;
+}
+
+.search-box-item>.name {
+    color: white;
+    font-size: 2em;
+    width: 400px;
+    border-radius: 20px;
+}
+
+.search-box-item>.price {
+    background-color: var(--color-button-link);
+    background-image: linear-gradient(to top, rgb(100, 100, 100), rgb(200, 200, 200));
+    padding: 5px;
+    color: white;
+    font-size: 2em;
+
+    width: 200px;
+    border-radius: 20px;
+}

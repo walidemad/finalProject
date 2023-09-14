@@ -3,30 +3,21 @@ body {
     margin: 0;
 }
 
-::-webkit-scrollbar {
-    width: 10em;
-
-}
-
-::-webkit-scrollbar-track {
-    background-color: gold;
-
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: red;
-    border-radius: 5px;
-    width: 5px;
-
+.header .logo.notindex>img {
+    width: 200px;
+    position: relative;
+    /* left: -50px; */
+    /* top: -50px; */
 }
 
 .popular {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 
-    width: 1210px;
-    height: 200px;
-    margin: auto;
+    width: 1350px;
+    height: 300px;
+    margin: 0px auto;
     margin-top: 100px;
     overflow-y: scroll;
     /* scrollbar-color: green; */

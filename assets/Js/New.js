@@ -1,48 +1,43 @@
 import { GamesArray, APPLICATIONNAME, MainImages, GamesNames, elm_new } from "./Main.js";
+
+//
 function fillNewSection() {
 
     GamesArray.forEach(function (v) {
         if (v.is_new == true) {
+            // console.log(v);
+            let box = document.createElement("div");
             let image = document.createElement("img");
+            let div_info = document.createElement("div");
+            let div_price = document.createElement("div");
+            let div_name = document.createElement("div");
+            box.className = "new-box-image";
             image.src = `./../Assets/Images/Games/${v.name.split(" ").join("").toUpperCase()}/${v.main_image}`;
             image.className = "new-image";
-            if (elm_new)
-                elm_new.appendChild(image);
+            image.id = v.id;
+            div_info.className = "new-box-info";
+
+            div_name.textContent = v.name;
+            div_price.textContent = v.price;
+            if (elm_new) {
+                div_info.appendChild(div_name);
+                div_info.appendChild(div_price);
+                box.appendChild(image);
+                box.appendChild(div_info);
+                elm_new.appendChild(box);
+            }
         }
     })
 }
+
+//
+function handleClickOfSearchInput() {
+    elms_new_images.forEach(function (v) {
+        v.addEventListener("click", function (e) {
+            window.location.href = `./../Games/GameInformation.html?id=${e.target.id}`;
+        })
+    });
+}
 fillNewSection();
-
-
-
-
-
-
-
-// let elm_slider = document.querySelector(".slider-of-popular");
-// let elm_slider_image = document.querySelectorAll(".slider-of-popular > img");
-// for (let i = 0; i < MainImages.length; ++i) {
-//     let img = document.createElement("img");
-//     // img.src = `/${APPLICATIONNAME}/Assets/Images/Games/GODOFWAR/` + GamesArray[i].main_image;
-//     img.src = `/${APPLICATIONNAME}/Assets/Images/Games/${GamesNames[i].toUpperCase().split(" ").join("")}/` + MainImages[i].image;
-//     img.classList.add("slider-image");
-//     img.id = `${MainImages[i].id}`;
-//     elm_slider.appendChild(img);
-// }
-// let c = -240;
-// setInterval(function () {
-//     // if (Math.abs(c) > elm_slider.children.length * 240) c = 0;
-//     // elm_slider.style.left = `${c}px`;
-//     // c -= 240;
-// }, 2000);
-// Array.from(elm_slider.children).forEach(function (v, i) {
-//     console.log("hellow");
-//     v.addEventListener("click", function () {
-//         window.location = window.location.origin + `/${APPLICATIONNAME}/Games/GameInformation.html?id=${v.id}`;
-//     })
-// });
-// for (let i = 0; i < elm_slider.children.length; ++i) {
-//     // elm_slider_image[i].addEventListener("click", function () {
-//     console.log("hellow")
-//     // })
-// }
+let elms_new_images = document.querySelectorAll(".new > .new-box-image>img ");
+handleClickOfSearchInput();

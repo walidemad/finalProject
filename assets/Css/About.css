@@ -1,0 +1,80 @@
+body {
+    background-color: black;
+    background-image: url("./../Images/Public/AboutBackgroundColor.jpg");
+    user-select: none;
+}
+
+.box-about {
+    margin: 50px auto;
+    padding: 20px 30px;
+    border-radius: 20px;
+    width: 50vw;
+    height: auto;
+    background-color: rgba(255, 255, 255, .5);
+
+}
+
+.box-about>div {
+    margin: 20px 0px;
+    border: 5px solid rgb(50, 50, 100);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+.box-about>div>div {
+    letter-spacing: 3px;
+}
+
+.box-about>div>div:nth-child(1) {
+    margin-top: 0px;
+}
+
+.box-about>div>div {
+    margin-top: 20px;
+    position: relative;
+}
+
+.box-about>div>div>label {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.mark {
+    position: absolute;
+    left: -40px;
+    top: 10px;
+    background-color: green;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    opacity: .5;
+}
+
+.box-about>div>div>::after {}
+
+.box-about>.home {
+    background-color: var(--color-button-link);
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+
+}
+
+.box-about>.team-members {}
+
+.box-about>div>.communication>.icons {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-about>div>.communication>.icons>img {
+    width: 25px;
+}

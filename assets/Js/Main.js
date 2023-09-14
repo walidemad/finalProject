@@ -18,6 +18,7 @@ export let page_name = path[path.length - 1];
 /////////////////////////////////////////////////////////////////////////
 //Game
 export class Game {
+    static counter_objects = 0;
     id = 0;
     name = "";
     version = "";
@@ -43,16 +44,18 @@ export class Game {
     is_popular = false;
     is_new = false;
     setId = function () {
-        let x = Math.floor(Math.random() * 1000000);
-        GamesArray.forEach(function (v, i) {
-            // while (x == v.id) {
-            if ((x == v.id)) return;
-            x = Math.floor(Math.random() * 1000000);
+        // let x = Math.floor(Math.random() * 1000000);
+        // GamesArray.forEach(function (v, i) {
+        //     // while (x == v.id) {
+        //     if ((x == v.id)) return;
+        //     x = Math.floor(Math.random() * 1000000);
 
-            // }
+        //     // }
 
-        });
-        this.id = x;
+        // });
+
+        this.id = Game.counter_objects;
+        Game.counter_objects += 1;
 
     }
 
@@ -64,14 +67,25 @@ export class Game {
 
 //popular.html
 export let elm_popular = document.querySelector(".popular");
+export let elms_popular_images = undefined;
 
 //new.html
 export let elm_new = document.querySelector(".new");
+export let elms_new_images = undefined;
+
+//GameInformation.html
+export let elm_slider_images = document.querySelector(".slider-for-game > .images");
+export let game_id = parseInt(window.location.search.substr(1).split("=")[1]);
+export let elm_game_play = document.querySelector(".game-play");
+export let elm_game_play_video = document.querySelector(".game-play > video.video");
 
 //shared
 export let elm_toggle_pages = document.querySelector(".toggle-popular-new");
 export let elm_toggle_pages_title_page_name = document.querySelector(".toggle-popular-new > .title span.name");
 export let elm_toggle_pages_button = document.querySelector(".toggle-popular-new > a.button");
+export let elm_search_input = document.querySelector(".search-bar >input");
+// export let elm_navbar = document.querySelectorAll(".navbar > .links > li>");
+export let elms_navbar = document.querySelectorAll(".navbar > .links > li>a");
 /////////////////////////////////////////////////////////////////////////
 //functions
 /////////////////////////////////////////////////////////////////////////
@@ -107,16 +121,16 @@ function addGameToGamesArray(
     is_popular = false,
     is_new = false) {
     let game = new Game();
-    // game.id = game.setId();
-    let x = Math.floor(Math.random() * 1000000);
-    GamesArray.forEach(function (v, i) {
-        // while (x == v.id) {
-        if ((x == v.id)) return;
-        x = Math.floor(Math.random() * 1000000);
-        // }
+    game.setId();
+    // let x = Math.floor(Math.random() * 1000000);
+    // GamesArray.forEach(function (v, i) {
+    //     // while (x == v.id) {
+    //     if ((x == v.id)) return;
+    //     x = Math.floor(Math.random() * 1000000);
+    // }
 
-    });
-    game.id = x;
+    // });
+    // game.id = x;
     game.name = name;
     game.version = version;
     game.company = company;
@@ -134,29 +148,41 @@ function addGameToGamesArray(
 
     GamesArray.push(game);
 }
+
+//
+function handleClickOfSearchInput() {
+    if (elm_search_input) {
+        elm_search_input.addEventListener("keypress", function (e) {
+            if (e.keyCode == "13") {
+
+                window.location.href = `./Games/Search.html?value=${e.target.value.toString().trim()}`;
+            }
+        });
+    }
+}
+//
+function handleClickOfPopularAndNewImages() {
+    elms_popular_images = document.querySelectorAll(".popular > .popular-box-image>img ");
+    elms_new_images = document.querySelectorAll(".new > .new-box-image>img ");
+    let ar = [elms_popular_images, elms_new_images];
+    ar.forEach(function (elm) {
+        if (elm) {
+            Array.from(elm).forEach(function (image) {
+                image.addEventListener("click", function (e) {
+                    window.location.href = `./../Games/GameInformation.html?id=${e.target.id}`;
+                });
+            });
+        }
+    });
+}
+
+
 /////////////////////////////////////////////////////////////////////////
 //calling functions
 /////////////////////////////////////////////////////////////////////////
 changeContentsOfCenter();
-
-
-
-
-
-
-
-
-
-
-
-// if (page_name.toLowerCase() == "popular.html") {
-// elm_toggle_popular_new_name.textContent = "New";
-// elm_toggle_popular_new_button.textContent = "New";
-// elm_toggle_popular_new_button.href = "./New.html";
-
-// }
-
-
+handleClickOfSearchInput();
+handleClickOfPopularAndNewImages();
 
 /////////////////////////////////////////////////////////////////////////
 //adding games to GameArray by calling function: addGameToGamesArray
@@ -370,7 +396,91 @@ addGameToGamesArray(
     false,
     true
 );
-
+//new
+addGameToGamesArray(
+    "Avatar Frontiers of Pandora",
+    "2024",
+    "Massive Entertainment",
+    "December 7, 2023",
+    "playstation 4 , playstation 5 , PC , XBOX X ,XBOX S",
+    "Frontiers of Pandora™ is a first-person, action-adventure game set in the open world of the never-before-seen Western Frontier of Pandora. Abducted by the human militaristic corporation known as the RDA, you, a Na'vi, were trained and molded to serve their purpose",
+    "action adventure",
+    "",
+    "",
+    "Main.jpg",
+    "",
+    "69.99",
+    false,
+    true
+);
+//new
+addGameToGamesArray(
+    "Destruction AllStars",
+    "2021",
+    "Lucid Games",
+    "2 February 2021",
+    "playstation 4 , playstation 5 , PC , XBOX X ,XBOX S",
+    "The game is a vehicular combat game in which players need to seek ways to destroy the vehicles of the opponents. AllStars can also eject from their vehicles, whether it be voluntarily or upon destruction.",
+    "vehicular combat",
+    "",
+    "",
+    "Main.jpg",
+    "",
+    "19.99",
+    false,
+    true
+);
+//new
+addGameToGamesArray(
+    "Lies of P",
+    "2023",
+    "Neowiz Games and Round8 Studio",
+    "September 19, 2023",
+    "playstation 4 , playstation 5 , PC , XBOX X ,XBOX S",
+    "What is Lies of P? A dark fantasy action game inspired by the classic story of Pinocchio. This macabre Soulslike draws its inspiration from an unlikely source: The Adventures of Pinocchio.",
+    "dark fantasy action",
+    "",
+    "",
+    "Main.jpg",
+    "",
+    "59.99",
+    false,
+    true
+);
+//new
+addGameToGamesArray(
+    "Madden NFL 24",
+    "2024",
+    "EA Sports",
+    "August 25, 2023",
+    "playstation 4 , playstation 5 , PC , XBOX X ,XBOX S",
+    "Experience the newest iteration of FieldSENSE™ in Madden NFL 24. More realistic character movement and smarter AI gives you control to play out your gameplay strategy with the confidence to dominate any opponent",
+    "sport ",
+    "",
+    "",
+    "Main.jpg",
+    "",
+    "69.99",
+    false,
+    true
+);
+//new
+addGameToGamesArray(
+    "Armored Core VI Fires of Rubicon",
+    "2023",
+    "FromSoftware",
+    "August 25, 2023",
+    "playstation 4 , playstation 5 , PC , XBOX X ,XBOX S",
+    "The gameplay in Armored Core VI emphasizes mecha-based vehicular combat. Players in this game take on the role of expert pilots in control of strong mechs known as Armored Cores. The huge flexibility for modification of these mechs with the use of various parts allows players to enhance and sharpen their capabilities.",
+    "Vehicular combat",
+    "",
+    "",
+    "Main.jpg",
+    "",
+    "59.99",
+    false,
+    true
+);
 
 
 GamesArray.forEach(function (v, i) {
@@ -378,39 +488,6 @@ GamesArray.forEach(function (v, i) {
     MainImages.push(item);
     GamesNames.push(v.name);
 });
-MainImages.push()
-let elm_home = document.querySelector(".box-home > .home") || "";
-if (elm_home) {
-    elm_home.addEventListener("click", function () {
-        window.location = window.location.origin + `/ ${APPLICATIONNAME} /index.html`;
-    });
-}
-
-let elm_searchbar_input = document.querySelector(".search-bar > input");
-let test_search_input_display = false;
-let elm_search_icon = document.querySelector(".search-bar > img.icon");
-if (elm_search_icon) {
-    elm_search_icon.addEventListener("click", function () {
-        if (test_search_input_display == false) {
-            elm_searchbar_input.style.display = "block";
-            test_search_input_display = true;
-        }
-        else {
-            elm_searchbar_input.style.display = "none";
-            test_search_input_display = false;
-        }
-
-    });
-}
-let elm_control = document.querySelector(".box-home > .control");
-if (elm_control) {
-
-    elm_control.addEventListener("click", function (e) {
-        window.location = window.origin + `/${APPLICATIONNAME}/Admin/Admin.html`;
-    })
-}
-console.log(GamesArray);
-// GamesArray.push("abbas");
 
 
 

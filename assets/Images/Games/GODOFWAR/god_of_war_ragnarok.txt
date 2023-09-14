@@ -1,0 +1,21 @@
+name: "GOD OF WAR",
+    version: "Ragnarök",
+    company: "Sony Interactive Entertainment",
+    release_date: " November 9, 2022",
+    platform: " playstation 4 , playstation 5 , PC , XBOX X ,XBOX S",
+
+    description: "As mentor and protector to Atreus, a son determined to earn his respect, he is forced to deal with and control the rage that has long defined him while out in a very dangerous world with his son. His vengeance against the Gods of Olympus behind him, Kratos now lives in the realm of Norse deities and monsters.",
+    category: "action-adventure game",
+    game_play: "Single-player",
+    requirements: {
+        os: "",
+        cpu: "",
+        ram: "",
+        gpu: "",
+        directx: "",
+        hard_disk: "106.817GB"
+
+    },
+    main_image:"",
+    images_from_game:[],
+    price:$69.99,
