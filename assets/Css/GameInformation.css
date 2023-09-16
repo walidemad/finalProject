@@ -1,0 +1,142 @@
+body {
+    height: 200%;
+    overflow-y: scroll;
+    background-size: cover;
+    user-select: none;
+    background-color: white;
+    background-image: none;
+}
+
+.over {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: -1;
+}
+
+.header {}
+
+.home {
+    background-color: var(--color-button-link);
+    width: 100px;
+    height: 40px;
+    margin: 20px;
+    padding: 5px;
+    position: relative;
+    top: 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+}
+
+.slider-for-game {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.slider-for-game>.images {
+    background-image: linear-gradient(to top, rgb(115, 6, 38), rgb(6, 9, 164));
+    opacity: .8;
+    margin: auto;
+    width: 1200px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.slider-for-game>.images>img {
+    /* visibility: hidden; */
+    margin: 0px 10px;
+    width: 200px;
+    /* height: 300px; */
+    border-radius: 20px;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    position: relative;
+    /* bottom: -310px; */
+    transition: all 2s ease;
+    transform: scale(0);
+}
+
+.slider-for-game>.images>img:nth-child(1) {
+    transform: scale(1);
+    /* visibility: visible; */
+}
+
+.slider-for-game>.buttons {
+    margin: auto;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+}
+
+.slider-for-game>.buttons>.button {
+    width: 100px;
+    height: 40px;
+    background-image: linear-gradient(to top, rgb(115, 6, 38), rgb(6, 9, 164));
+    margin: 0px 10px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+}
+
+.game-play {
+    width: 80%;
+    height: 400px;
+    margin: auto;
+}
+
+.game-play>video {
+    width: 100%;
+    /* height: 400px; */
+    margin: auto;
+    border-radius: 50px;
+}
+
+@keyframes an1 {
+    0% {
+        /* visibility: hidden; */
+        transform: scale(0);
+    }
+
+    50% {
+        visibility: visible;
+        transform: scale(1.5);
+    }
+
+    /* 95% {
+        visibility: visible;
+        transform: scale(1);
+    } */
+
+    100% {
+        visibility: visible;
+        transform: scale(1);
+    }
+}
+
+@keyframes an2 {
+    0% {
+        /* visibility: hidden; */
+        transform: scale(1);
+    }
+
+    100% {
+        /* visibility: visible; */
+        transform: scale(0);
+    }
+}

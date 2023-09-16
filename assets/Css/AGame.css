@@ -1,0 +1,179 @@
+body {
+    background-color: cadetblue;
+    height: 150vh;
+}
+
+.bar {}
+
+.container {}
+
+.container-games>.header {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.container-games>.header>div {
+    background-image: linear-gradient(to top, rgb(200, 200, 150), rgb(220, 220, 200));
+    height: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0px 5px;
+    line-height: 40px;
+    font-size: 1.2em;
+}
+
+.row>div {
+    background-image: linear-gradient(to top, rgb(180, 160, 120), rgb(220, 200, 150));
+    padding: 5px;
+    border-radius: 10px;
+    margin: 0px 5px;
+    margin: 0px 5px;
+    line-height: 40px;
+}
+
+.container-games>.header>.id,
+.row>.id {
+    width: 50px;
+}
+
+.container-games>.header>.name,
+.row>.name {
+    width: 150px;
+}
+
+.container-games>.header>.price,
+.row .price {
+    width: 100px;
+}
+
+.container-games>.header>.version,
+.row .version {
+    width: 100px;
+}
+
+.container-games>.header>.date,
+.row .date {
+    width: 200px;
+}
+
+.row {
+    display: flex;
+
+    height: 40px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.container-addgame {
+    display: flex;
+
+}
+
+.container-addgame>.properties {
+    width: 200px;
+}
+
+.container-addgame>.properties>div {
+    height: 40px;
+    padding: 10px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    background-image: linear-gradient(to right, rgb(165, 13, 66), rgb(228, 39, 106));
+}
+
+.container-addgame>.properties>.requirements {
+    height: 390px;
+}
+
+.container-addgame>.inputs {
+    width: 600px;
+}
+
+.container-addgame>.inputs>input {
+    display: block;
+    width: 600px;
+    height: 40px;
+    padding: 10px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.container-addgame>.inputs>.requirements {
+    width: 600px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.container-addgame>.inputs>.requirements>div {
+    display: flex;
+}
+
+.container-addgame>.inputs>.requirements>div>.label {
+    width: 200px;
+    height: 40px;
+    padding: 5px 10px;
+    line-height: 40px;
+    font-size: 1.2em;
+    background-color: brown;
+    margin-right: 0px;
+}
+
+.container-addgame>.inputs>.requirements>div>input {
+    display: block;
+    width: 300px;
+    height: 40px;
+    padding: 5px 10px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.container-addgame>.inputs>.requirements>div>select {
+    display: block;
+    width: 300px;
+    height: 50px;
+    padding: 5px 10px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.container-addgame>.inputs>.requirements>div>.core>label {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    padding: 5px;
+    background-color: antiquewhite;
+    border-radius: 50%;
+}
+
+.container-addgame>.inputs>.requirements>div>.core>input[type="radio"] {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    padding: 5px;
+    background-color: antiquewhite;
+}
+
+.content>.submit {
+    display: none;
+    width: 200px;
+    height: 50px;
+    padding: 5px;
+    background-color: brown;
+}

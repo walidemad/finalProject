@@ -1,0 +1,183 @@
+body {
+    background-image: url(./../Images/MainBackground.webp);
+    margin: 0;
+}
+
+.header .logo.notindex>img {
+    width: 200px;
+    position: relative;
+    /* left: -50px; */
+    /* top: -50px; */
+}
+
+.popular {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    width: 1350px;
+    height: 300px;
+    margin: 0px auto;
+    margin-top: 100px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    position: relative;
+    top: -100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.slider-of-popular {
+    /* margin: 0px auto; */
+    width: 400px;
+    /* height: 500px; */
+    display: flex;
+    /* direction: rtl; */
+    /* perspective: 200px;
+    perspective-origin: center center; */
+    position: relative;
+    left: 0px;
+    /* transition: all 1s ease; */
+    /* animation-name: an1; */
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+    transition: all 0.5s ease;
+}
+
+.slider-of-popular img {
+    width: 200px;
+    padding: 0px 20px;
+    /* border-radius: 120px; */
+}
+
+/* .slider-image {
+    position: relative;
+    left: -400px;
+    width: 380px;
+    padding: 20px;
+
+} */
+
+@keyframes an1 {
+    0% {
+        opacity: 100%;
+        left: 0px;
+    }
+
+    5% {
+        opacity: 100%;
+        left: 0px;
+    }
+
+    10% {
+        opacity: 100%;
+        left: -420px;
+    }
+
+    15% {
+        opacity: 100%;
+        left: -840px;
+    }
+
+    20% {
+        left: -840px;
+    }
+
+    25% {
+        left: -1260px;
+        opacity: 100%;
+    }
+
+    30% {
+        left: -1260px;
+        opacity: 100%;
+    }
+
+    35% {
+        left: -1680px;
+        opacity: 100%;
+    }
+
+    40% {
+        left: -1680px;
+        opacity: 100%;
+    }
+
+    45% {
+        left: -2100px;
+        opacity: 100%;
+    }
+
+    50% {
+        left: -2100px;
+        opacity: 100%;
+    }
+
+    55% {
+        left: -2520px;
+        opacity: 100%;
+    }
+
+    60% {
+        left: -2520px;
+        opacity: 100%;
+    }
+
+    65% {
+        left: -2940px;
+        opacity: 100%;
+    }
+
+    70% {
+        opacity: 100%;
+        left: -2940px;
+    }
+
+    75% {
+        left: -3360px;
+        opacity: 100%;
+    }
+
+    80% {
+        left: -3360px;
+        opacity: 100%;
+    }
+
+    90% {
+        left: -3360px;
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 0%;
+        left: 0px;
+    }
+}
+
+@keyframes an2 {
+    0% {
+        opacity: 100%;
+    }
+
+
+    100% {
+        opacity: 50%;
+
+    }
+}
