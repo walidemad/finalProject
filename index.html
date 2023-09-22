@@ -1,58 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="./style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+	<link rel="stylesheet" href="./assets/Css/Main.css">
+	<link rel="stylesheet" href="./assets/Css/SliderOfIndex.css">
+	<link rel="stylesheet" href="./Assets/Css/NavbarPages.css">
 	<title>Document</title>
 </head>
+
 <body>
-	<div class="background-game-image">
-		<div class="overlay"></div>
+
+
+
+	<!-- <div class="background-game-image">
 		
+	</div> -->
+	<div class="overlay"></div>
+
+
+
+	<div class="box-home">
+		<!-- <div>Home</div> -->
+
+		<!-- <div class="control">Control Page</div> -->
 	</div>
 
-	<div class="navbar">
-		<div class="logo"><a href="#">LOGO</a></div>
-		<ul class="links">
-			<li><a href="home">Home</a></li>
-			<li><a href="popular">popular</a></li>
-			<li><a href="new">NEW</a></li>
-			<li><a href="about">ABOUT</a></li>
-						<a href="#" class="action_btn">LOGIN</a>
 
-					</ul>
-			<div class="toggle_btn">
-			<i class="fa-solid fa-bars"></i></div>
-			<div class="search-bar">
-			<input id="icon" type="text" placeholder="Search"></div>
-		
-		<div class="dropdown_menu ">
-			<li><a href="home">Home</a></li>
-			<li><a href="popular">popular</a></li>
-			<li><a href="new">NEW</a></li>
-			<li><a href="about">ABOUT</a></li>
-			<li><a href="login">Login</a></li>
-			<li><a href="#" class="action_btn">Get Started</a></li>
+
+	<div class="header-public">
+		<div class="logo"><img src="./Assets/Images/Icons/Logo6.png" alt=""></div>
+		<div class="search-bar">
+			<input id="icon" type="text" placeholder="Search">
 		</div>
 	</div>
+
+
+
+	<div class="navbar">
+		<ul class="links">
+			<li><a href="/index.html">HOME</a></li>
+			<li><a href="./NavbarPages/Popular.html">POPULAR</a></li>
+			<li><a href="./NavbarPages/New.html">NEW</a></li>
+			<li><a href="./About.html">ABOUT</a></li>
+			<a href="./Log/LogIn.html" class="login">LOGIN</a>
+
+		</ul>
+		<div class="toggle_btn">
+			<i class="fa-solid fa-bars"></i>
+		</div>
+
+
+	</div>
+
+
+
+	<div class="slider">
+		<div class="arrow">
+			<img src="./assets/Images/Icons/LeftArrow1.png" width="80px" alt="" class="left"><img
+				src="./assets/Images/Icons/RightArrow1.png" alt="" width="80px" class="right">
+		</div>
+		<h1 class="name"></h1>
+		<div class="read-more">Read More</div>
+	</div>
+
 	<script>
 		const toggleBtn = document.querySelector('.toggle_btn')
 		const toggleBtnIcon = document.querySelector('.toggle_btn i')
 		const dropDownMenu = document.querySelector('.dropdown_menu')
 
-		toggleBtn.onclick =function (){
-		dropDownMenu.classList.toggle('open')
-		const isOpen =dropDownMenu.classList.contains('open')
+		toggleBtn.onclick = function () {
+			dropDownMenu.classList.toggle('open')
+			const isOpen = dropDownMenu.classList.contains('open')
 
-		toggleBtnIcon.classList = isOpen
-		? 'fa-solid fa-xmark'
-		: 'fa_solid fa-bars'
+			toggleBtnIcon.classList = isOpen
+				? 'fa-solid fa-xmark'
+				: 'fa_solid fa-bars'
 		}
-		
+
 	</script>
-	
-	
+	<script src="./Assets/Js/Main.js" type="module"></script>
+	<script src="./Assets/Js/Header.js" type="module"></script>
+	<script src="./Assets/Js/Slider.js" type="module"></script>
+	<script src="./Assets/Js/Search.js" type="module"></script>
+
 </body>
+
 </html>

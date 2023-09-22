@@ -1,0 +1,9 @@
+uncharted-4
+
+2022
+January 2022 
+    platform: " playstation 4 , playstation 5 , PC , XBOX X ,XBOX S",
+description : Uncharted 4: A Thief's End is an action-adventure game played from a third-person perspective, with platforming elements. Players traverse several environments, moving through locations including towns, buildings, and wilderness to advance through the game's story.
+
+action-adventure game
+$64.99.

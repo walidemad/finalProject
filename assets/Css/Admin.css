@@ -1,43 +1,64 @@
 body {
     /* background-size: cover; */
-    background-image: linear-gradient(to right, rgb(10, 40, 100), rgb(3, 86, 118));
-}
-
-.bar {
-    width: 100vw;
-    height: 100px;
-    background-image: linear-gradient(to top, rgb(22, 121, 174), rgb(29, 128, 234));
+    background-image: url(./../Images/Public/ImageBgAdmin.jpg);
 }
 
 .main {
-    display: flex;
+    /* display: flex; */
     width: 100vw;
 }
 
-.main .options {
-    width: 20vw;
+.main>.options {
+    display: block;
+    width: 90vw;
+    height: 200px;
+    display: flex;
+    margin: 50px auto;
+    justify-content: space-between;
 }
 
 .main .options>div {
-    width: 100%;
-    height: 50px;
-    padding: 5px 10px;
-    text-align: left;
-    line-height: 50px;
-    color: white;
+    position: relative;
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+    line-height: 180px;
+    color: black;
     font-weight: bold;
     font-size: 1.5em;
-    background-image: linear-gradient(to right, rgb(165, 13, 66), rgb(228, 39, 106));
+    background-color: rgba(255, 255, 255, .7);
     user-select: none;
-    margin: 50px 0px;
-    border-top-right-radius: 35px;
-    border-bottom-right-radius: 35px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.main .options>div::before {
+    display: block;
+    content: "";
+    width: 250px;
+    height: 50px;
+    position: absolute;
+    top: 75px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, .2);
 }
 
 .main .options>div:hover {
-    transition: all 1s ease;
-    text-align: right;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    transition: all .5s ease;
     cursor: pointer;
+}
+
+.main .options>div:hover::before {
+    display: block;
+    content: "";
+    width: 250px;
+    height: 50px;
+    position: absolute;
+    top: 75px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .main .content {
@@ -47,31 +68,52 @@ body {
 .content>div {
     margin-top: 50px;
     display: none;
-}
-
-.content>div {
-
-    /* display: flex; */
-    justify-content: space-around;
-    width: 100%;
+    justify-content: space-between;
 }
 
 .content>div>div {
-    border-radius: 50%;
-    width: 200px;
+    position: relative;
+    width: 250px;
     height: 200px;
-    background-image: radial-gradient(circle, rgb(165, 13, 66), rgb(228, 39, 106));
-    text-align: center;
-    line-height: 200px;
-    font-size: 2em;
-    color: white;
+    padding: 10px;
+    line-height: 180px;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5em;
+    background-color: rgba(255, 255, 255, .7);
     user-select: none;
-    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.content>div>div::before {
+    display: block;
+    content: "";
+    width: 250px;
+    height: 50px;
+    position: absolute;
+    top: 75px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, .2);
 }
 
 .content>div>div:hover {
-    transform: scale(1.5);
-    transition: all 0.5s ease-in-out;
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    cursor: pointer;
+}
+
+.content>div>div:hover::before {
+    display: block;
+    content: "";
+    width: 250px;
+    height: 50px;
+    position: absolute;
+    top: 75px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .content .users>div:nth-child(4) {

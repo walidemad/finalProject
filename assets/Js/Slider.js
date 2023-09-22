@@ -1,17 +1,33 @@
 import { GamesArray, APPLICATIONNAME } from "./Main.js";
+
+
+
+
+
 /////////////////////////////////////////////////////////////////////////
-// define variables
-let current_game_id = 0;
+// define public variables
 /////////////////////////////////////////////////////////////////////////
+let currentGameId = 0;
+
+
+
+
 
 /////////////////////////////////////////////////////////////////////////
 //get elements from html
 /////////////////////////////////////////////////////////////////////////
-let elm_slider = document.querySelector(".slider");
-let elm_left_arrow = document.querySelector(".slider > .arrow > img.left");
-let elm_right_arrow = document.querySelector(".slider > .arrow > img.right");
-let elm_game_name = document.querySelector(".slider > .name");
-let elm_read_more = document.querySelector(".slider .read-more");
+let DOMSlider = {
+    divSlider: document.querySelector(".slider"),
+    imgSliderArrowLeft: document.querySelector(".slider > .arrow > img.left"),
+    imgSliderArrowRight: document.querySelector(".slider > .arrow > img.right"),
+    divSliderName: document.querySelector(".slider > .name"),
+    divSliderReadMore: document.querySelector(".slider >.read-more")
+}
+
+
+
+
+
 
 /////////////////////////////////////////////////////////////////////////
 //functions
@@ -20,51 +36,55 @@ let elm_read_more = document.querySelector(".slider .read-more");
 function setBackgroundOfIndexPage() {
     document.body.style.backgroundImage = `url(./../Assets/Images/Games/${GamesArray[0].name.split(" ").join("").toUpperCase()}/Main.jpg`;
 }
-
-//
 function handleClickOfReadMore() {
-    elm_read_more.addEventListener("click", function (e) {
-        // e.target.style.transform = "scale(1.5)";
+    DOMSlider.divSliderReadMore.addEventListener("click", function (e) {
         window.location.href = `./Games/gameInformation.html?id=${current_game_id}`;
     });
-    elm_read_more.addEventListener("mouseleave", function (e) {
+}
+function handleMouseOverOfReadMore() {
+    DOMSlider.divSliderReadMore.addEventListener("mouseover", function (e) {
+        e.target.style.transform = "scale(1.2)";
+    });
+}
+function handleMouseLeaveOfReadMore() {
+    DOMSlider.divSliderReadMore.addEventListener("mouseleave", function (e) {
         e.target.style.transform = "scale(1)";
     });
 }
-//
 function slidingAllImagesOfGamesArray() {
-    let elm_slider = document.querySelector(".slider");
-    let elm_left_arrow = document.querySelector(".slider > .arrow > img.left");
-    let elm_right_arrow = document.querySelector(".slider > .arrow > img.right");
-    let elm_game_name = document.querySelector(".slider > .name");
-    let current_index = 0;
+    // let divSlider = document.querySelector(".slider");
+    // let imgSliderArrowLeft = document.querySelector(".slider > .arrow > img.left");
+    // let imgSliderArrowRight = document.querySelector(".slider > .arrow > img.right");
+    // let divSliderName = document.querySelector(".slider > .name");
+    let currentIndex = 0;
 
-    let short_name;
-    elm_game_name.textContent = GamesArray[0].name;
-    elm_left_arrow.addEventListener("click", function () {
-        current_index -= 1;
-        if (current_index == -1) {
-            current_index = 0;
+    let shortName;
+    DOMSlider.divSliderName.innerText = GamesArray[0].name;
+    DOMSlider.imgSliderArrowLeft.addEventListener("click", function () {
+        currentIndex -= 1;
+        if (currentIndex == -1) {
+            currentIndex = 0;
         }
-        current_game_id = GamesArray[current_index].id;
-        short_name = GamesArray[current_index].name.split(" ").join("").toUpperCase();
-        document.body.style.backgroundImage = `url(./../Assets/Images/Games/${short_name}/Main.jpg`;
-        elm_game_name.textContent = GamesArray[current_index].name;
+        currentGameId = GamesArray[currentIndex].id;
+        shortName = GamesArray[currentIndex].name.split(" ").join("").toUpperCase();
+        document.body.style.backgroundImage = `url(./../Assets/Images/Games/${shortName}/Main.jpg`;
+        DOMSlider.divSliderName.innerText = GamesArray[currentIndex].name;
     });
 
 
-    elm_right_arrow.addEventListener("click", function () {
-        current_index += 1;
-        if (current_index == GamesArray.length) {
-            current_index = GamesArray.length - 1;
+    DOMSlider.imgSliderArrowRight.addEventListener("click", function () {
+        currentIndex += 1;
+        if (currentIndex == GamesArray.length) {
+            currentIndex = GamesArray.length - 1;
         }
-        current_game_id = GamesArray[current_index].id;
-        short_name = GamesArray[current_index].name.split(" ").join("").toUpperCase();
-        document.body.style.backgroundImage = `url(./../Assets/Images/Games/${short_name}/Main.jpg`;
-        elm_game_name.textContent = GamesArray[current_index].name;
+        currentGameId = GamesArray[currentIndex].id;
+        shortName = GamesArray[currentIndex].name.split(" ").join("").toUpperCase();
+        document.body.style.backgroundImage = `url(./../Assets/Images/Games/${shortName}/Main.jpg`;
+        DOMSlider.divSliderName.innerText = GamesArray[currentIndex].name;
     });
 }
-//
+
+
 
 
 

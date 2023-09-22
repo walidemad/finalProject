@@ -1,0 +1,91 @@
+body {
+    background-image: url(./../Images/Public/ImageBgAdmin.jpg);
+}
+
+.header {
+    height: 50px;
+    margin: 20px 0px;
+    padding: 0px;
+    line-height: 50px;
+    overflow: hidden;
+}
+
+.home {
+    display: block;
+    background-color: var(--color-button-link);
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    position: relative;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+}
+
+.main {
+    position: relative;
+    margin: 20px 0px;
+}
+
+.content {}
+
+.box-games {
+    height: max-content;
+
+}
+
+.box-game {
+    background-color: rgba(255, 255, 255, .7);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 600px;
+    height: 120px;
+    margin: 20px 0px;
+    border-radius: 20px;
+}
+
+.box-game>* {
+    margin: 0px 20px;
+}
+
+.box-game>img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.box-game>.name {
+    color: black;
+    font-size: 1.2em;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.box-game>.price {
+    width: 100px;
+    background-color: var(--color-bg-card);
+    padding: 5px;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.box-game>.remove {
+    background-color: red;
+    color: white;
+    width: 100px;
+    padding: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+}
+
+.box-game>.remove:hover {
+    cursor: pointer;
+}

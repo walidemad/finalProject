@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../Assets/Css/Main.css">
+    <link rel="stylesheet" href="./../Assets/Css/Admin.css">
+    <link rel="stylesheet" href="./../Assets/Css/AGame.css">
+</head>
+
+<body>
+    <div class="main">
+
+        <div class="content">
+            <div class="container-addgame">
+                <div class="properties">
+                    <div class="name">Name</div>
+                    <div class="version">Version</div>
+                    <div class="date">Release Date</div>
+                    <div class="requirements">Requirements</div>
+                    <div class="description">Discription</div>
+                    <div class="platform">Platform</div>
+                    <div class="price">Price</div>
+                </div>
+                <div class="inputs">
+                    <input type="text" class="name">
+                    <input type="text" class="version">
+                    <input type="date" class="date">
+                    <div class="requirements">
+                        <div>
+                            <div class="label">OS</div>
+                            <select name="" id="">
+                                <option value="">Windows</option>
+                                <option value="">Mac</option>
+                            </select>
+                        </div>
+                        <div>
+                            <div class="label">CPU</div><input type="text">
+                        </div>
+                        <div>
+                            <div class="label">RAM</div><input type="text">
+                        </div>
+                        <div>
+                            <div class="label">GPU</div><input type="text">
+                        </div>
+                        <div>
+                            <div class="label">DirectX</div><input type="text">
+                        </div>
+                        <div>
+                            <div class="label">Hard Disk</div><input type="text">
+                        </div>
+                        <div>
+                            <div class="label">Core</div>
+                            <div class="core">
+                                <label for="">64 bit</label><input type="radio" name="core" id="">
+                                <label for="">32 bit</label><input type="radio" name="core" id="">
+                                <label for="">Both</label><input type="radio" name="core" id="">
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <input type="text" class="description">
+                    <input type="text" class="platform">
+                    <input type="text" class="price">
+                </div>
+            </div>
+            <div class="submit">Submit</div>
+        </div>
+    </div>
+    <script src="./../Assets/Js/Admin.js" type="module"></script>
+</body>
+
+</html>

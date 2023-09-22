@@ -1,0 +1,10 @@
+Madden NFL 24
+24
+company: "EA Sports"
+August 18, 2023
+platform: " playstation 4 , playstation 5 , PC , XBOX X ,XBOX S",
+
+description : Experience the newest iteration of FieldSENSE™ in Madden NFL 24. More realistic character movement and smarter AI gives you control to play out your gameplay strategy with the confidence to dominate any opponent
+
+category: "sport game"
+$69.99

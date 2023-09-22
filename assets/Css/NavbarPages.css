@@ -8,7 +8,11 @@
     background-color: rgba(30, 3, 48, 0.57);
 }
 
+::-webkit-scrollbar {
 
+    visibility: hidden;
+    scroll-behavior: smooth;
+}
 
 .navbar.popular-page,
 .navbar.new-page {

@@ -1,6 +1,12 @@
-import { GamesArray, APPLICATIONNAME, MainImages, GamesNames, elm_new } from "./Main.js";
+import { GamesArray, APPLICATIONNAME, MainImages, GamesNames, elm_new, handleClickOfPopularAndNewImages } from "./Main.js";
 
-//
+
+
+
+
+/////////////////////////////////////////////////////////////////////////
+//functions
+/////////////////////////////////////////////////////////////////////////
 function fillNewSection() {
 
     GamesArray.forEach(function (v) {
@@ -30,14 +36,12 @@ function fillNewSection() {
     })
 }
 
-//
-function handleClickOfSearchInput() {
-    elms_new_images.forEach(function (v) {
-        v.addEventListener("click", function (e) {
-            window.location.href = `./../Games/GameInformation.html?id=${e.target.id}`;
-        })
-    });
-}
+
+
+
+
+/////////////////////////////////////////////////////////////////////////
+//calling functions
+/////////////////////////////////////////////////////////////////////////
 fillNewSection();
-let elms_new_images = document.querySelectorAll(".new > .new-box-image>img ");
-handleClickOfSearchInput();
+handleClickOfPopularAndNewImages();

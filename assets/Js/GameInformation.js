@@ -1,15 +1,30 @@
-import { GamesArray, elm_game_play, elm_game_play_video, game_id, elm_slider_images } from "./Main.js";
-
+import { GamesArray, game_id, ShoppingCartArray } from "./Main.js";
 /////////////////////////////////////////////////////////////////////////
 //define public variables
 /////////////////////////////////////////////////////////////////////////
+let currentId = window.location.search.substring(1).split("=")[1];
+let arr = JSON.parse(localStorage.getItem("cart")) || [];
+let last = 0;
+
+
+
+
 
 /////////////////////////////////////////////////////////////////////////
 //get element from html pages
-let elms_slider_images;
 /////////////////////////////////////////////////////////////////////////
+let DOMGameInformation = {
+    divSliderForGame: document.querySelector(".slider-for-game"),
+    divSliderForGameImages: document.querySelector(".slider-for-game > .images"),
+    Images: "",
 
-let elms_buttons = document.querySelectorAll(".slider-for-game>.buttons>.button");
+    buttonOptionsButtonAdd: document.querySelector(".cart >.options> .button-add"),
+    ButtonsSliderForGameButtons: document.querySelectorAll(".slider-for-game>.buttons>.button"),
+    divGamePlay: document.querySelector(".game-play"),
+    videoGamePlay: document.querySelector(".game-play>video"),
+}
+
+
 /////////////////////////////////////////////////////////////////////////
 //functions
 /////////////////////////////////////////////////////////////////////////
@@ -33,72 +48,78 @@ function addGamePlay() {
     source.src = `./../Assets/Images/Games/${game.name.toUpperCase().split(" ").join("")}/GamePlay.mp4`;
     source.type = "video/mp4";
     source.autoplay = "autoplay";
-    elm_game_play_video.appendChild(source);
+    DOMGameInformation.videoGamePlay.appendChild(source);
 }
-function addGAmesToSlider() {
+function addGamesToSlider() {
     GamesArray.forEach(function (v, i) {
         if (v.id == game_id) {
-            let short_name = v.name.toUpperCase().split(" ").join("");
+            let shortName = v.name.toUpperCase().split(" ").join("");
             for (let i = 0; i < 5; ++i) {
                 let image = document.createElement("img");
-                image.src = `./../Assets/Images/Games/${short_name}/${short_name} (${i + 1}).jpg`;
-                elm_slider_images.appendChild(image);
+                image.src = `./../Assets/Images/Games/${shortName}/${shortName} (${i + 1}).jpg`;
+                DOMGameInformation.divSliderForGameImages.appendChild(image);
             }
         }
     });
+    DOMGameInformation.Images = document.querySelectorAll(".slider-for-game>.images>img");
 }
-let last = 0;
-let test = 0;
 function slidingImages() {
-    let ar_images = Array.from(elms_slider_images);
-    let ar_buttons = Array.from(elms_buttons);
-    ar_buttons.forEach(function (v, i) {
+    let arrayImages = Array.from(DOMGameInformation.Images);
+    let arrayButtons = Array.from(DOMGameInformation.ButtonsSliderForGameButtons);
+    arrayButtons.forEach(function (v, i) {
         v.addEventListener("click", function (e) {
-            if (test == i) {
-
-            } else {
-                ar_images[i].style.animationName = "an1";
-                if (last !== -1) {
-
-                    ar_images[last].style.animationName = "an2";
-                }
+            arrayImages[i].style.animationName = "an1";
+            if (last !== -1) {
+                arrayImages[last].style.animationName = "an2";
             }
-
             last = i;
-            test = last;
-
-
-            ar_images.forEach(function (elm, index) {
-                // if (index !== i) {
-                if (ar_images[index].style.transform == "scale(1)") {
-                    // console.log(ar_images[index])
-                    // ar_images[index].style.animationName = "an2";
-                    // ar_images[index].style.visibility = "hidden";
-                }
-            });
-            // f();
-        });
+        })
     });
-    // function f() {
-    // ar_images.forEach(function (v) {
-    //     if (v.style.visibility == "visible") {
-
-    //     } else {
-    //         v.style.visibility = "hidden";
-    //     }
-    // });
-    // }
 }
+function handleClickAddGameToCart() {
+    // const fs = require("fs");
+    DOMGameInformation.buttonOptionsButtonAdd.addEventListener("click", function (e) {
+        addGameToShoppingCartArray();
+        e.target.textContent = "This Game Is Added";
+        // window.location.href = "./../ShoppingCart.html";
+    });
+}
+function addGameToShoppingCartArray() {
+    let game = (GamesArray.filter(function (v, index) {
+        if (currentId == v.id) {
+            return v;
+        }
+    }))[0];
+    let obj = {
+        id: game_id,
+        name: game.name,
+        price: game.price,
+        image: "./Assets/Images/Games/" + game.name.split(" ").join("").toUpperCase() + "/" + game.main_image,
+    }
+    ShoppingCartArray.push({
+        id: game.id,
+        name: game.name,
+        price: game.price,
+        image: "./Assets/Images/Games/" + game.name.split(" ").join("").toUpperCase() + "/" + game.main_image,
+    });
+    arr.push({
+        id: game.id,
+        name: game.name,
+        price: game.price,
+        image: "./Assets/Images/Games/" + game.name.split(" ").join("").toUpperCase() + "/" + game.main_image,
+    });
+    console.log("ShoppingCartArray =", ShoppingCartArray)
+    window.localStorage.setItem("cart", JSON.stringify(arr));
+}
+
+
+
+
 
 /////////////////////////////////////////////////////////////////////////
 //calling functions
 /////////////////////////////////////////////////////////////////////////
-// setBodyBackgroundColor();
-addGAmesToSlider();
-let e = document.querySelector(".slider-for-game>.images");
-let b = document.querySelector(".slider-for-game>.buttons");
-
-
-elms_slider_images = document.querySelectorAll(".slider-for-game>.images>img");
+addGamesToSlider();
 slidingImages();
 addGamePlay();
+handleClickAddGameToCart();

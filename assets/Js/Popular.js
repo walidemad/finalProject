@@ -1,4 +1,12 @@
-import { GamesArray, APPLICATIONNAME, MainImages, GamesNames, elm_popular, elms_navbar } from "./Main.js";
+import { GamesArray, APPLICATIONNAME, MainImages, GamesNames, elm_popular, elms_navbar, handleClickOfPopularAndNewImages, changeContentsOfCenter } from "./Main.js";
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////
+//functions
+/////////////////////////////////////////////////////////////////////////
 function fillPopularSection() {
     GamesArray.forEach(function (v) {
         if (v.is_popular == true) {
@@ -26,15 +34,13 @@ function fillPopularSection() {
     });
 
 }
-function handleClickOfSearchInput() {
-    elms_popular_images.forEach(function (v) {
-        v.addEventListener("click", function (e) {
-            window.location.href = `./../Games/GameInformation.html?id=${e.target.id}`;
-        })
-    });
-}
 
+
+
+
+/////////////////////////////////////////////////////////////////////////
+//calling functions
+/////////////////////////////////////////////////////////////////////////
 fillPopularSection();
-let elms_popular_images = document.querySelectorAll(".popular > .popular-box-image>img ");
-
-handleClickOfSearchInput();
+changeContentsOfCenter();
+handleClickOfPopularAndNewImages();

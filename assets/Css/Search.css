@@ -2,6 +2,7 @@ body {
     background-image: none;
     padding: 0;
     margin: 0;
+    overflow: scroll;
 }
 
 .over {
@@ -34,17 +35,14 @@ body {
     text-decoration: none;
 }
 
-.over {
-    position: absolute;
-    top: 0px;
-    left: 0px;
+.main {
+    width: 100vw;
 }
 
 .content {}
 
 .search-box-items {
-    height: max-content;
-    /* overflow-y: scroll; */
+    height: auto;
 
 }
 
@@ -55,7 +53,6 @@ body {
     align-items: center;
     width: 90%;
     height: 220px;
-    /* overflow-y: scroll; */
 }
 
 .search-box-item>img {
@@ -72,7 +69,8 @@ body {
 
 .search-box-item>.price {
     background-color: var(--color-button-link);
-    background-image: linear-gradient(to top, rgb(100, 100, 100), rgb(200, 200, 200));
+    /* background-image: linear-gradient(to top, rgb(100, 100, 100), rgb(200, 200, 200)); */
+    background-color: var(--color-bg-card);
     padding: 5px;
     color: white;
     font-size: 2em;
