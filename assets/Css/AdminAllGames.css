@@ -1,0 +1,110 @@
+body {
+    /* background-size: cover; */
+    height: 200vh;
+    background-image: url(./../Images/Public/ImageBgAdmin.jpg);
+    background-attachment: fixed;
+    overflow-y: scroll;
+    user-select: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.header-admin {
+    width: 100vw;
+    height: 50px;
+    overflow: hidden;
+}
+
+.header-admin>a {
+    background-color: var(--color-button-link);
+    color: white;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    margin: 0px 10px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.main {
+    /* display: flex; */
+    width: 100vw;
+}
+
+.container-games>.header {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.container-games {
+    display: block;
+}
+
+.container-games>.header {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: auto;
+    height: 50px;
+    overflow: hidden;
+    line-height: 50px;
+}
+
+.container-games>.header>div {
+    /* background-image: linear-gradient(to top, rgb(200, 200, 150), rgb(220, 220, 200)); */
+    height: 50px;
+    padding: 5px;
+    text-align: left;
+    margin: 0px 5px;
+    font-size: 1.2em;
+    line-height: 40px;
+}
+
+.row {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 1000px;
+    height: 50px;
+}
+
+.row>div {
+    padding: 5px;
+    border-radius: 10px;
+    margin: 0px 5px;
+    margin: 0px 5px;
+    line-height: 40px;
+}
+
+.container-games>.header>.id,
+.row>.id {
+    width: 50px;
+}
+
+.container-games>.header>.name,
+.row>.name {
+    width: 150px;
+    /* font-size: .5em; */
+}
+
+.container-games>.header>.price,
+.row .price {
+    width: 100px;
+}
+
+.container-games>.header>.version,
+.row .version {
+    width: 100px;
+}
+
+.container-games>.header>.date,
+.row .date {
+    width: 200px;
+}
+
+.row {
+    display: flex;
+
+    height: 40px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
